@@ -1,0 +1,2 @@
+db.getCollection('log_apps').find({"app-name":"abc"})
+db.getCollection('log_apps').find({"app-name":"logogenina"})
