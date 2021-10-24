@@ -1,14 +1,16 @@
 package com.romaxit.dev.universelog.controllers;
 
 import com.romaxit.dev.universelog.domain.documents.LogAppDocument;
+import com.romaxit.dev.universelog.domain.dtos.LogAppDocumentDto;
 import com.romaxit.dev.universelog.domain.dtos.ParametrosDto;
 import com.romaxit.dev.universelog.services.interfaces.ILogAppService;
+import config.CustomApplicationException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import javax.management.BadAttributeValueExpException;
 import java.util.List;
 
 @RestController
@@ -31,6 +33,13 @@ public class DashboardController {
     @GetMapping("find-all")
     public List<LogAppDocument> findAll() {
         return service.findALl();
+    }
+
+    @PostMapping ("add")
+    public ResponseEntity<Object> save(@RequestBody LogAppDocumentDto logAppDocument) throws CustomApplicationException {
+        service.save(logAppDocument);
+        return new ResponseEntity<>( null, HttpStatus.OK);
+
     }
 
 }
