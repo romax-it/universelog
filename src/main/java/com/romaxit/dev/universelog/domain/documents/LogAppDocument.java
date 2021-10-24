@@ -1,5 +1,6 @@
 package com.romaxit.dev.universelog.domain.documents;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.internal.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,6 +29,7 @@ public class LogAppDocument implements Serializable {
     private String microservicio;
 
     @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss", timezone = "GMT-5")
     private Date fecha;
 
     @NotNull
@@ -37,12 +39,12 @@ public class LogAppDocument implements Serializable {
 
     private String negocio;
 
-    @Field("ref-linea-codigo")
+    @Field("ref_linea_codigo")
     private String referenciaLineaCodigo;
 
     private String parametros;
 
-    @Field("otros-parametros")
+    @Field("otros_parametros")
     private String otrosParametros;
 
     private String status;
