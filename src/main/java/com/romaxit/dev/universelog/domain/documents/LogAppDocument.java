@@ -21,19 +21,14 @@ public class LogAppDocument implements Serializable {
     private String id;
 
     @NotNull
-    @Field("app-name")
-    private String appName;
+    @Field("app")
+    private String app;
 
     @NotNull
-    private String tipo;
-
-    @NotNull
-    private String mensaje;
+    private String microservicio;
 
     @NotNull
     private Date fecha;
-
-    private int codigo;
 
     @NotNull
     private String clase;
@@ -42,15 +37,23 @@ public class LogAppDocument implements Serializable {
 
     private String negocio;
 
-    @Field("tag-rastreo")
-    private String tagRastreo;
-
-    private String flujo;
+    @Field("ref-linea-codigo")
+    private String referenciaLineaCodigo;
 
     private String parametros;
 
     @Field("otros-parametros")
     private String otrosParametros;
 
+    private String status;
+
+    @NotNull
+    private String mensaje;
+
     private String excepcion;
+
+    private String user;
+
+    private String ip;
+
 }

@@ -16,7 +16,7 @@ public class LogAppService implements ILogAppService {
 
     @Override
     public List<LogAppDocument> findAllByAppName(String appName) {
-        return repository.findAllByAppNameContaining(appName);
+        return repository.findAllByAppContaining(appName);
     }
 
     @Override

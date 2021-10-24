@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 
 public interface LogAppRepository extends MongoRepository<LogAppDocument, String> {
-    List<LogAppDocument> findAllByAppNameContaining(String appName);
+    List<LogAppDocument> findAllByAppContaining(String appName);
     List<LogAppDocument> findAll();
     List<LogAppDocument> findAllByClase(String clase);
 }
